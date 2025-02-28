@@ -1,5 +1,18 @@
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f2f5;
+}
+
+/* Container principal */
 .quiz-container {
-    padding-top: 100px;
+    padding-top: 80px;
     min-height: 100vh;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
@@ -7,217 +20,317 @@
 .quiz-wrapper {
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 20px;
 }
 
+/* Cabeçalho do Quiz */
 .quiz-header {
-    margin-bottom: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .quiz-header h1 {
-    color: var(--primary-color);
+    color: #333;
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
 }
 
-.quiz-header h1 i {
-    margin-right: 1rem;
-    color: var(--secondary-color);
+.quiz-header p {
+    color: #666;
+    font-size: 1.1rem;
 }
 
+/* Card de Registro */
+.registration-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registration-card h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#player-name {
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 250px;
+}
+
+/* Card de Questão */
 .question-card {
     background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-.progress-bar-wrapper {
-    height: 6px;
-    background: #eee;
-    border-radius: 3px;
-    margin-bottom: 2rem;
+.question-title {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    border-radius: 3px;
-    transition: width 0.3s ease;
-}
-
+/* Opções */
 .options-container {
-    display: grid;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .option-btn {
-    background: white;
-    border: 2px solid #eee;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
     border-radius: 10px;
-    padding: 1rem;
-    text-align: left;
-    transition: all 0.3s ease;
+    background: white;
+    font-size: 1rem;
+    color: #333;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    width: 100%;
 }
 
 .option-btn:hover {
-    border-color: var(--secondary-color);
+    background: #f8f9fa;
     transform: translateY(-2px);
+    border-color: #007bff;
 }
 
 .option-btn.correct {
-    background: #d4edda;
+    background: #28a745;
+    color: white;
     border-color: #28a745;
 }
 
 .option-btn.wrong {
-    background: #f8d7da;
+    background: #dc3545;
+    color: white;
     border-color: #dc3545;
 }
 
+/* Barra de Progresso */
+.progress-bar-wrapper {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    transition: width 0.3s ease;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+/* Card de Resultado */
 .result-card {
     background: white;
-    border-radius: 20px;
-    padding: 2rem;
+    border-radius: 15px;
+    padding: 30px;
     text-align: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .score-container {
-    margin: 2rem 0;
+    margin: 20px 0;
 }
 
 .score-circle {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: #f8f9fa;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
     margin: 0 auto;
+    border: 3px solid #007bff;
 }
 
-.score-circle #score {
-    font-size: 3rem;
+#score {
+    font-size: 2.5rem;
+    color: #007bff;
     font-weight: bold;
 }
 
 .score-label {
-    font-size: 1rem;
-    opacity: 0.9;
+    color: #666;
+    margin-top: 5px;
 }
 
+/* Botão do Quiz */
 .quiz-btn {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    padding: 12px 25px;
     border: none;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    font-size: 1.1rem;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .quiz-btn:hover {
+    background: #0056b3;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 768px) {
-    .quiz-wrapper {
-        padding: 1rem;
-    }
-
-    .quiz-header h1 {
-        font-size: 2rem;
-    }
-
-    .question-card {
-        padding: 1.5rem;
-    }
+.quiz-btn i {
+    margin-right: 8px;
 }
 
-/* Estilos para o registro do jogador */
-.registration-card {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-}
-
-.input-group {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.input-group input {
-    padding: 0.8rem;
-    border: 2px solid #eee;
-    border-radius: 10px;
-    font-size: 1rem;
-    width: 250px;
-}
-
-/* Estilos para imagens nas questões */
-.question-image {
-    max-width: 100%;
-    border-radius: 10px;
-    margin: 1rem 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* Estilos para o ranking */
+/* Leaderboard Section */
 .leaderboard-section {
-    margin-top: 3rem;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.leaderboard-section h3 i {
+    color: #ffd700;
+    margin-right: 10px;
 }
 
 .leaderboard-container {
-    background: white;
-    border-radius: 20px;
-    padding: 1.5rem;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .leaderboard-entry {
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 15px;
     border-bottom: 1px solid #eee;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .leaderboard-entry:hover {
-    background: #f8f9fa;
+    background-color: #f8f9fa;
 }
 
-.leaderboard-entry.top-three {
-    background: linear-gradient(to right, rgba(var(--primary-color-rgb), 0.1), transparent);
-}
-
-.rank {
-    font-size: 1.2rem;
-    font-weight: bold;
+.leaderboard-entry .rank {
     width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
 }
 
-.player-info {
+.leaderboard-entry .player-info {
     flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.medal {
+.leaderboard-entry .player-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.leaderboard-entry .player-score {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.leaderboard-entry .medal {
     font-size: 1.5rem;
-    width: 40px;
-    text-align: center;
+    margin-left: 10px;
+}
+
+/* Top 3 styling */
+.leaderboard-entry.top-three {
+    background-color: #f8f9fa;
+}
+
+.leaderboard-entry.top-three .rank {
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: white;
+}
+
+/* Scrollbar styling */
+.leaderboard-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.leaderboard-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.leaderboard-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.leaderboard-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .quiz-wrapper {
+        padding: 15px;
+    }
+
+    .quiz-header h1 {
+        font-size: 2rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #player-name {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .leaderboard-entry {
+        padding: 10px;
+    }
+
+    .leaderboard-entry .rank {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
 }

@@ -1,0 +1,24 @@
+/* Estilos para o conteúdo oculto */
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.section-content.show {
+    max-height: 2000px; /* Valor alto o suficiente para o conteúdo */
+}
+
+/* Estilo para a seta */
+.header-mobile-right i {
+    transition: transform 0.3s ease;
+}
+
+/* Estilo para o header mobile */
+.section-header-mobile {
+    cursor: pointer;
+}
+
+.section-header-mobile.active {
+    background-color: rgba(0,0,0,0.02);
+} 

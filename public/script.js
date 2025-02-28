@@ -156,47 +156,36 @@ document.addEventListener('DOMContentLoaded', init3DModel);
 
 // Controle da seção de Sintomas
 document.addEventListener('DOMContentLoaded', function() {
-    // Sintomas
-    const symptomsHeader = document.querySelector('.symptoms-section .section-header-mobile');
-    const symptomsContent = document.getElementById('symptomsContent');
+    // Seleciona todos os headers mobile que devem ter comportamento de toggle
+    const mobileHeaders = document.querySelectorAll('.section-header-mobile');
 
-    if (symptomsHeader && symptomsContent) {
-        symptomsHeader.addEventListener('click', function() {
+    mobileHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            // Encontra o conteúdo associado (próximo elemento após o header)
+            const content = this.nextElementSibling;
+            
+            // Toggle da classe active no header
             this.classList.toggle('active');
-            symptomsContent.classList.toggle('show');
+            
+            // Toggle da classe show no conteúdo
+            if (content) {
+                content.classList.toggle('show');
+                
+                // Animação suave de altura
+                if (content.classList.contains('show')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = "0";
+                }
+            }
+
+            // Rotaciona a seta
+            const arrow = this.querySelector('.fa-chevron-down');
+            if (arrow) {
+                arrow.style.transform = this.classList.contains('active') 
+                    ? 'rotate(180deg)' 
+                    : 'rotate(0)';
+            }
         });
-    }
-
-    // Causas
-    const causesHeader = document.querySelector('.causes-section .section-header-mobile');
-    const causesContent = document.getElementById('causesContent');
-
-    if (causesHeader && causesContent) {
-        causesHeader.addEventListener('click', function() {
-            this.classList.toggle('active');
-            causesContent.classList.toggle('show');
-        });
-    }
-
-    // A Doença
-    const introHeader = document.querySelector('.intro-section .section-header-mobile');
-    const introContent = document.getElementById('introContent');
-
-    if (introHeader && introContent) {
-        introHeader.addEventListener('click', function() {
-            this.classList.toggle('active');
-            introContent.classList.toggle('show');
-        });
-    }
-
-    // Classificação
-    const classificationHeader = document.querySelector('.classification-section .section-header-mobile');
-    const classificationContent = document.getElementById('classificationContent');
-
-    if (classificationHeader && classificationContent) {
-        classificationHeader.addEventListener('click', function() {
-            this.classList.toggle('active');
-            classificationContent.classList.toggle('show');
-        });
-    }
+    });
 }); 
