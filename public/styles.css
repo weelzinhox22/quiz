@@ -14,11 +14,47 @@ body {
 .navbar {
     background-color: var(--primary-color);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
 .navbar-brand {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 5px;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link i {
+    margin-right: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff !important;
+    background: rgba(255,255,255,0.1);
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+    }
 }
 
 .hero {
@@ -917,6 +953,26 @@ footer h4 {
     color: #555;
     line-height: 1.6;
     margin: 0;
+}
+
+.cause-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cause-info ul li {
+    color: #555;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.cause-info ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
@@ -1918,4 +1974,1098 @@ footer h4 {
 
 .section-header-mobile.active {
     background-color: rgba(0,0,0,0.02);
-} 
+}
+
+/* Seção Quiz Promo - Design Profissional */
+#quiz-promo {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+}
+
+#quiz-promo .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.quiz-promo-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.05),
+        0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.quiz-promo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+}
+
+.quiz-promo-content {
+    padding: 50px;
+    text-align: center;
+}
+
+.quiz-icon {
+    margin-bottom: 25px;
+}
+
+.quiz-icon i {
+    font-size: 48px;
+    color: #3b82f6;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.quiz-promo-content h2 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.quiz-promo-content .lead {
+    font-size: 1.2rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quiz-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: #f8faff;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-3px);
+}
+
+.feature i {
+    color: #3b82f6;
+    font-size: 20px;
+}
+
+.feature span {
+    color: #4b5563;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary i {
+    font-size: 1.2rem;
+}
+
+/* Animação do ícone */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #quiz-promo {
+        padding: 60px 0;
+    }
+
+    .quiz-promo-content {
+        padding: 40px 25px;
+    }
+
+    .quiz-promo-content h2 {
+        font-size: 2rem;
+    }
+
+    .quiz-promo-content .lead {
+        font-size: 1.1rem;
+    }
+
+    .quiz-features {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .feature {
+        justify-content: flex-start;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-promo-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .quiz-promo-content .lead {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+}
+
+/* Ajustes do container principal */
+.section#illustrations {
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.illustration-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* Card de ilustração */
+.illustration-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    height: auto;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteúdo do card */
+.face-comparison,
+.nerve-illustration,
+.face-anatomy {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    min-height: 220px;
+}
+
+/* Imagem do nervo */
+.nerve-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+}
+
+/* Textos */
+.illustration-card h4 {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.illustration-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    text-align: center;
+    color: #666;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .illustration-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .illustration-card {
+        min-height: 260px;
+    }
+
+    .face-comparison,
+    .nerve-illustration,
+    .face-anatomy {
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .illustration-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .illustration-card {
+        min-height: 240px;
+    }
+
+    .face-comparison,
+    .nerve-illustration,
+    .face-anatomy {
+        min-height: 180px;
+    }
+
+    .nerve-image {
+        max-height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .illustration-card {
+        min-height: 220px;
+    }
+
+    .face-comparison,
+    .nerve-illustration,
+    .face-anatomy {
+        min-height: 160px;
+    }
+
+    .nerve-image {
+        max-height: 160px;
+    }
+}
+
+/* Estilos específicos para anatomia facial */
+.face-anatomy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    padding: 0.5rem;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    border-radius: 10px;
+}
+
+.head-outline {
+    width: 160px;
+    height: 200px;
+    position: relative;
+    background: linear-gradient(145deg, #f4f4f4, #ffffff);
+    border-radius: 80px 80px 60px 60px;
+    box-shadow: 
+        inset 0 -8px 12px rgba(0,0,0,0.05),
+        0 2px 8px rgba(0,0,0,0.1);
+    border: 2px solid #e0e0e0;
+    overflow: hidden;
+}
+
+/* Detalhes anatômicos do contorno */
+.head-outline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0,0,0,0.03)
+    );
+    border-radius: 0 0 60px 60px;
+}
+
+.head-outline::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 40px;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.02),
+        transparent
+    );
+    border-radius: 50%;
+}
+
+/* Responsividade do contorno */
+@media (max-width: 768px) {
+    .head-outline {
+        width: 140px;
+        height: 170px;
+        border-radius: 70px 70px 50px 50px;
+    }
+
+    .head-outline::after {
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .head-outline {
+        width: 120px;
+        height: 150px;
+        border-radius: 60px 60px 45px 45px;
+    }
+
+    .head-outline::after {
+        height: 30px;
+    }
+}
+
+/* Músculo Frontal */
+.muscle.frontal {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 30px;
+    background: linear-gradient(180deg, #ff9a9e, #ffd1d1);
+    border-radius: 50px 50px 0 0;
+    opacity: 0.9;
+}
+
+/* Músculos Orbiculares dos Olhos */
+.eye-muscle {
+    width: 35px;
+    height: 25px;
+    background: linear-gradient(90deg, #ff9a9e, #ffd1d1);
+    border-radius: 20px;
+    position: absolute;
+    top: 60px;
+    opacity: 0.9;
+}
+
+.eye-muscle.left { left: 25px; }
+.eye-muscle.right { right: 25px; }
+
+/* Músculos Zigomáticos */
+.zygomatic {
+    width: 20px;
+    height: 45px;
+    background: linear-gradient(90deg, #ff9a9e, #ffd1d1);
+    border-radius: 10px;
+    position: absolute;
+    top: 90px;
+    opacity: 0.9;
+}
+
+.zygomatic.left {
+    left: 30px;
+    transform: rotate(15deg);
+}
+
+.zygomatic.right {
+    right: 30px;
+    transform: rotate(-15deg);
+}
+
+/* Músculo Orbicular da Boca */
+.mouth-muscle {
+    width: 70px;
+    height: 30px;
+    background: linear-gradient(90deg, #ff9a9e, #ffd1d1);
+    border-radius: 15px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.9;
+}
+
+/* Labels dos músculos */
+.muscle .label {
+    position: absolute;
+    font-size: 0.7rem;
+    color: #444;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 4px;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.frontal .label {
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.eye-muscle.left .label {
+    left: -65px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.zygomatic.left .label {
+    left: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mouth-muscle .label {
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Animações dos músculos */
+@keyframes muscleHighlight {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 0.7; }
+}
+
+.muscle {
+    animation: muscleHighlight 3s ease-in-out infinite;
+}
+
+.eye-muscle {
+    animation: muscleHighlight 3s ease-in-out infinite 0.5s;
+}
+
+.zygomatic {
+    animation: muscleHighlight 3s ease-in-out infinite 1s;
+}
+
+.mouth-muscle {
+    animation: muscleHighlight 3s ease-in-out infinite 1.5s;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .face-anatomy {
+        height: 180px;
+    }
+
+    .head-outline {
+        width: 140px;
+        height: 170px;
+    }
+
+    .muscle.frontal {
+        width: 85px;
+        height: 25px;
+    }
+
+    .eye-muscle {
+        width: 30px;
+        height: 22px;
+    }
+
+    .zygomatic {
+        width: 18px;
+        height: 40px;
+    }
+
+    .mouth-muscle {
+        width: 60px;
+        height: 25px;
+    }
+
+    .muscle .label {
+        font-size: 0.65rem;
+        padding: 1px 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .face-anatomy {
+        height: 160px;
+    }
+
+    .head-outline {
+        width: 120px;
+        height: 150px;
+    }
+
+    .muscle.frontal {
+        width: 75px;
+        height: 22px;
+    }
+
+    .eye-muscle {
+        width: 25px;
+        height: 20px;
+    }
+
+    .zygomatic {
+        width: 16px;
+        height: 35px;
+    }
+
+    .mouth-muscle {
+        width: 50px;
+        height: 22px;
+    }
+
+    .muscle .label {
+        font-size: 0.6rem;
+    }
+}
+
+/* Comparação Facial */
+.face-comparison {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    height: 220px;
+    padding: 0.5rem;
+    background: #fff;
+    border-radius: 10px;
+}
+
+/* Face base */
+.face {
+    width: 100px;
+    height: 140px;
+    background: linear-gradient(145deg, #ffe0b2, #ffd180);
+    border-radius: 50px 50px 40px 40px;
+    position: relative;
+    box-shadow: 
+        inset 0 -4px 8px rgba(0,0,0,0.05),
+        0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Sobrancelhas */
+.eyebrow {
+    width: 22px;
+    height: 3px;
+    background: #333;
+    position: absolute;
+    top: 35px;
+    border-radius: 3px;
+}
+
+.eyebrow.left { left: 25px; transform: rotate(5deg); }
+.eyebrow.right { right: 25px; transform: rotate(-5deg); }
+.eyebrow.drooped { transform: rotate(-20deg); }
+
+/* Olhos */
+.eye {
+    width: 18px;
+    height: 14px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.eye.left { left: 27px; }
+.eye.right { right: 27px; }
+.eye.drooped { transform: translateY(6px); }
+
+.pupil {
+    width: 6px;
+    height: 6px;
+    background: #222;
+    border-radius: 50%;
+}
+
+/* Nariz */
+.nose {
+    width: 10px;
+    height: 25px;
+    background: linear-gradient(90deg, #ffccaa, #ffbb93);
+    position: absolute;
+    top: 60px;
+    left: 45px;
+    border-radius: 20px;
+}
+
+/* Boca */
+.mouth {
+    width: 35px;
+    height: 20px;
+    position: absolute;
+    bottom: 35px;
+    left: 33px;
+}
+
+.lip {
+    width: 35px;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    border-radius: 2px;
+}
+
+.lip.upper { top: 0; }
+.lip.lower { bottom: 0; }
+.lip.affected { width: 28px; opacity: 0.7; }
+
+.mouth.drooped {
+    transform: rotate(-20deg) translateY(5px);
+}
+
+/* Divisor */
+.divider {
+    width: 2px;
+    height: 70%;
+    background: linear-gradient(to bottom, transparent, #ddd, transparent);
+}
+
+/* Labels */
+.face .label {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: #555;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+/* Animação lado afetado */
+.face.affected {
+    animation: affectedPulse 4s ease-in-out infinite;
+}
+
+@keyframes affectedPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.98); filter: brightness(0.98); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .face-comparison {
+        height: 180px;
+        gap: 1rem;
+    }
+
+    .face {
+        width: 90px;
+        height: 125px;
+    }
+
+    .eyebrow {
+        width: 20px;
+        top: 32px;
+    }
+
+    .eye {
+        width: 16px;
+        height: 12px;
+        top: 40px;
+    }
+
+    .nose {
+        width: 8px;
+        height: 22px;
+        top: 55px;
+        left: 41px;
+    }
+
+    .mouth {
+        width: 30px;
+        bottom: 32px;
+        left: 30px;
+    }
+
+    .face .label {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .face-comparison {
+        height: 160px;
+    }
+
+    .face {
+        width: 80px;
+        height: 110px;
+    }
+}
+
+/* Seção de Referências - Estilo Acadêmico Profissional */
+#referencias {
+    padding: 70px 0;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+#referencias .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.reference-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.reference-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.reference-card:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.reference-type {
+    padding: 12px 20px;
+    background: #f3f4f6;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 7px 7px 0 0;
+}
+
+.reference-type i {
+    color: #4b5563;
+    font-size: 15px;
+}
+
+.reference-type span {
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.reference-content {
+    padding: 20px;
+}
+
+.reference-title {
+    color: #111827;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.reference-authors {
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.reference-journal {
+    color: #6b7280;
+    font-size: 13.5px;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.reference-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    background: #f0f5ff;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.reference-link:hover {
+    background: #e6edfe;
+    color: #1e40af;
+}
+
+.reference-link i {
+    font-size: 12px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .reference-list {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #referencias {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .reference-list {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    #referencias .container {
+        padding: 0 20px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .reference-type {
+        padding: 10px 15px;
+    }
+
+    .reference-content {
+        padding: 15px;
+    }
+
+    .reference-title {
+        font-size: 15px;
+    }
+
+    .reference-authors {
+        font-size: 13px;
+    }
+
+    .reference-journal {
+        font-size: 12.5px;
+    }
+}
+
+/* Animação suave ao carregar */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reference-card {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.reference-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.reference-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.reference-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+/* Seção de Informações Adicionais */
+.info-section {
+    margin-top: 60px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.04),
+        0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.info-title {
+    font-size: 1.8rem;
+    color: #1a365d;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 600;
+    position: relative;
+}
+
+.info-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    border-radius: 2px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
+    border-color: #d1d5db;
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background: #ebf5ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.info-icon i {
+    font-size: 24px;
+    color: #3b82f6;
+}
+
+.info-content h4 {
+    color: #1f2937;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.info-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-content li {
+    color: #4b5563;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+.info-content .bullet {
+    width: 6px;
+    height: 6px;
+    background: #3b82f6;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .info-section {
+        padding: 30px 20px;
+        margin-top: 40px;
+    }
+
+    .info-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .info-grid {
+        gap: 20px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-section {
+        padding: 25px 15px;
+    }
+
+    .info-title {
+        font-size: 1.3rem;
+    }
+
+    .info-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .info-content li {
+        font-size: 0.9rem;
+    }
+}
