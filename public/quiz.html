@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Paralisia Facial</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quiz-styles.css">
+</head>
+<body>
+    <!-- Navbar igual ao index -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <!-- ... conteúdo da navbar ... -->
+    </nav>
+
+    <div class="quiz-container">
+        <div class="container">
+            <div class="quiz-wrapper">
+                <div class="quiz-header text-center">
+                    <h1><i class="fas fa-brain"></i> Quiz da Paralisia Facial</h1>
+                    <p>Teste seus conhecimentos sobre a condição</p>
+                </div>
+
+                <div id="player-registration" class="registration-card">
+                    <h3>Registre-se para Jogar</h3>
+                    <div class="input-group">
+                        <input type="text" id="player-name" placeholder="Seu nome">
+                        <button class="quiz-btn" onclick="startQuizWithPlayer()">
+                            <i class="fas fa-play"></i> Começar Quiz
+                        </button>
+                    </div>
+                </div>
+
+                <div id="quiz-content">
+                    <div class="question-card" id="question-container">
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <h3 id="question-text"></h3>
+                        <div class="options-container" id="options-container"></div>
+                    </div>
+
+                    <div class="result-card" id="result-container" style="display: none;">
+                        <h2>Resultado</h2>
+                        <div class="score-container">
+                            <div class="score-circle">
+                                <span id="score">0</span>
+                                <span class="score-label">Pontos</span>
+                            </div>
+                        </div>
+                        <div class="result-details" id="result-details"></div>
+                        <button class="quiz-btn" onclick="restartQuiz()">
+                            <i class="fas fa-redo"></i> Tentar Novamente
+                        </button>
+                    </div>
+                </div>
+
+                <div class="leaderboard-section">
+                    <h3><i class="fas fa-trophy"></i> Ranking dos Melhores</h3>
+                    <div id="leaderboard" class="leaderboard-container">
+                        <!-- Preenchido dinamicamente -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html> 

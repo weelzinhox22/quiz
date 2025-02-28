@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paralisia Facial - Estudo Fisioterapêutico</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Paralisia Facial</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#doenca">A Doença</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#diagnostico">Diagnóstico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fisiopatologia">Fisiopatologia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tratamento">Tratamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quiz.html">Quiz Interativo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-3">Paralisia Facial</h1>
+                        <div class="subtitle-divider"></div>
+                        <p class="lead mb-4">Um estudo completo sobre diagnóstico, fisiopatologia e tratamento</p>
+                        <div class="institution-card">
+                            <div class="institution-header">
+                                <i class="fas fa-university"></i>
+                                <h3>Informações Institucionais</h3>
+                            </div>
+                            <div class="institution-body">
+                                <div class="info-item">
+                                    <i class="fas fa-building"></i>
+                                    <div class="info-text">
+                                        <strong>Instituição</strong>
+                                        <span>Faculdade Unime Anhanguera</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-book"></i>
+                                    <div class="info-text">
+                                        <strong>Disciplina</strong>
+                                        <span>Fisioterapia na Atenção Secundária</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                    <div class="info-text">
+                                        <strong>Professora</strong>
+                                        <span>Silvia Tuane</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="model-container">
+                        <iframe 
+                            title="Facial Nerve" 
+                            frameborder="0" 
+                            allowfullscreen 
+                            mozallowfullscreen="true" 
+                            webkitallowfullscreen="true" 
+                            allow="autoplay; fullscreen; xr-spatial-tracking" 
+                            xr-spatial-tracking 
+                            execution-while-out-of-viewport 
+                            execution-while-not-rendered 
+                            web-share 
+                            src="https://sketchfab.com/models/f89a4c19aa19483aa5f5aba3987c9e01/embed?autostart=1&camera=0&preload=1">
+                        </iframe>
+                        <div class="model-attribution">
+                            <p>Modelo 3D por 
+                                <a href="https://sketchfab.com/galejustin" target="_blank" rel="nofollow">galejustin</a> 
+                                no 
+                                <a href="https://sketchfab.com" target="_blank" rel="nofollow">Sketchfab</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botão expansível para mobile -->
+            <div class="mobile-team-trigger d-md-none">
+                <button class="btn-expand w-100" id="teamTrigger">
+                    <div class="btn-expand-content">
+                        <div class="btn-expand-left">
+                            <i class="fas fa-users"></i>
+                            <span>Ver Equipe</span>
+                        </div>
+                        <div class="btn-expand-right">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            
+            <div class="row team-section" id="teamSection">
+                <h2 class="text-center mb-4">Nossa Equipe</h2>
+                <div class="col-md-3">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="team-info">
+                            <h3>Bruna Silva</h3>
+                            <p>Fisioterapia - 6º Semestre</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="team-info">
+                            <h3>Eduarda Meng</h3>
+                            <p>Fisioterapia - 6º Semestre</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="team-info">
+                            <h3>Iara Gama</h3>
+                            <p>Fisioterapia - 6º Semestre</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="team-info">
+                            <h3>Wesley Santos</h3>
+                            <p>Fisioterapia - 6º Semestre</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção A Doença -->
+    <section id="doenca" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">A Doença</h2>
+            
+            <!-- Introdução -->
+            <div class="disease-section intro-section">
+                <!-- Header Desktop -->
+                <div class="intro-header d-none d-md-block">
+                    <div class="title-wrapper text-center">
+                        <h2 class="section-subtitle mb-0">
+                            <i class="fas fa-book-medical"></i>
+                            A Doença
+                        </h2>
+                    </div>
+                </div>
+                
+                <!-- Header Mobile -->
+                <div class="section-header-mobile d-md-none">
+                    <div class="header-mobile-content">
+                        <div class="header-mobile-left">
+                            <i class="fas fa-book-medical"></i>
+                            <span>A Doença</span>
+                        </div>
+                        <div class="header-mobile-right">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conteúdo -->
+                <div class="intro-content" id="introContent">
+                    <div class="intro-grid">
+                        <div class="intro-card">
+                            <div class="intro-icon">
+                                <i class="fas fa-info-circle pulse-animation"></i>
+                            </div>
+                            <div class="intro-info">
+                                <h4>O que é?</h4>
+                                <p>A paralisia facial é uma condição caracterizada pela fraqueza ou paralisia dos músculos da face, geralmente afetando um lado. A forma mais comum é a Paralisia de Bell, que representa cerca de 75% dos casos.</p>
+                            </div>
+                        </div>
+
+                        <div class="intro-card">
+                            <div class="intro-icon">
+                                <i class="fas fa-chart-line glow-animation"></i>
+                            </div>
+                            <div class="intro-info">
+                                <h4>Estatísticas</h4>
+                                <ul>
+                                    <li>Incidência: 20-30 casos por 100.000 pessoas/ano</li>
+                                    <li>Faixa etária mais comum: 15-45 anos</li>
+                                    <li>Recuperação completa: 70% dos casos</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="intro-card">
+                            <div class="intro-icon">
+                                <i class="fas fa-list-alt spin-animation"></i>
+                            </div>
+                            <div class="intro-info">
+                                <h4>Tipos</h4>
+                                <ul>
+                                    <li>Paralisia de Bell (idiopática)</li>
+                                    <li>Paralisia facial central</li>
+                                    <li>Paralisia facial periférica</li>
+                                    <li>Paralisia facial congênita</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sinais e Sintomas -->
+            <div class="disease-section symptoms-section">
+                <div class="symptoms-header d-none d-md-block">
+                    <div class="title-wrapper text-center">
+                        <h2 class="section-subtitle mb-0">
+                            <i class="fas fa-stethoscope"></i>
+                            Sinais e Sintomas
+                        </h2>
+                    </div>
+                </div>
+                
+                <!-- Versão mobile do header -->
+                <div class="section-header-mobile d-md-none">
+                    <div class="header-mobile-content">
+                        <div class="header-mobile-left">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Sinais e Sintomas</span>
+                        </div>
+                        <div class="header-mobile-right">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="symptoms-content" id="symptomsContent">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="symptoms-grid">
+                                <div class="symptom-card">
+                                    <div class="symptom-icon">
+                                        <i class="fas fa-eye blink-animation"></i>
+                                    </div>
+                                    <div class="symptom-info">
+                                        <h4>Manifestações Oculares</h4>
+                                        <ul>
+                                            <li><span class="bullet"></span>Incapacidade de fechar o olho</li>
+                                            <li><span class="bullet"></span>Lacrimejamento excessivo</li>
+                                            <li><span class="bullet"></span>Sensibilidade à luz</li>
+                                            <li><span class="bullet"></span>Ressecamento ocular</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="symptom-card">
+                                    <div class="symptom-icon">
+                                        <i class="far fa-smile smile-animation"></i>
+                                    </div>
+                                    <div class="symptom-info">
+                                        <h4>Alterações na Expressão</h4>
+                                        <ul>
+                                            <li><span class="bullet"></span>Assimetria ao sorrir</li>
+                                            <li><span class="bullet"></span>Dificuldade para franzir a testa</li>
+                                            <li><span class="bullet"></span>Queda do canto da boca</li>
+                                            <li><span class="bullet"></span>Perda das rugas naturais</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="symptom-card">
+                                    <div class="symptom-icon">
+                                        <i class="fas fa-utensils eating-animation"></i>
+                                    </div>
+                                    <div class="symptom-info">
+                                        <h4>Dificuldades Funcionais</h4>
+                                        <ul>
+                                            <li><span class="bullet"></span>Dificuldade para mastigar</li>
+                                            <li><span class="bullet"></span>Escape de alimentos/líquidos</li>
+                                            <li><span class="bullet"></span>Alteração do paladar</li>
+                                            <li><span class="bullet"></span>Acúmulo de saliva</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Causas Principais -->
+            <div class="disease-section causes-section">
+                <div class="causes-header d-none d-md-block">
+                    <div class="title-wrapper text-center">
+                        <h2 class="section-subtitle mb-0">
+                            <i class="fas fa-search-plus"></i>
+                            Causas Principais
+                        </h2>
+                    </div>
+                </div>
+                
+                <!-- Versão mobile do header -->
+                <div class="section-header-mobile d-md-none">
+                    <div class="header-mobile-content">
+                        <div class="header-mobile-left">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Causas Principais</span>
+                        </div>
+                        <div class="header-mobile-right">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="causes-content" id="causesContent">
+                    <div class="causes-grid">
+                        <div class="cause-card">
+                            <div class="cause-icon">
+                                <i class="fas fa-head-side-virus pulse-animation"></i>
+                            </div>
+                            <div class="cause-info">
+                                <h4>Traumas</h4>
+                                <p>Fraturas do osso temporal, lesões cirúrgicas (especialmente em cirurgias de glândula parótida), ou traumas diretos no nervo facial.</p>
+                            </div>
+                        </div>
+
+                        <div class="cause-card">
+                            <div class="cause-icon">
+                                <i class="fas fa-virus spin-animation"></i>
+                            </div>
+                            <div class="cause-info">
+                                <h4>Infecções</h4>
+                                <p>Além do herpes vírus, outras infecções como otite média, doença de Lyme, e síndrome de Ramsay Hunt podem causar paralisia facial.</p>
+                            </div>
+                        </div>
+
+                        <div class="cause-card">
+                            <div class="cause-icon">
+                                <i class="fas fa-brain glow-animation"></i>
+                            </div>
+                            <div class="cause-info">
+                                <h4>Neurológicas</h4>
+                                <p>Tumores na região da parótida ou no cérebro podem comprimir o nervo facial, causando paralisia.</p>
+                            </div>
+                        </div>
+
+                        <div class="cause-card">
+                            <div class="cause-icon">
+                                <i class="fas fa-shield-virus shield-animation"></i>
+                            </div>
+                            <div class="cause-info">
+                                <h4>Autoimunes</h4>
+                                <p>Esclerose múltipla ou síndrome de Guillain-Barré podem afetar o nervo facial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Classificação -->
+            <div class="disease-section classification-section">
+                <!-- Header Desktop -->
+                <div class="classification-header d-none d-md-block">
+                    <div class="title-wrapper text-center">
+                        <h2 class="section-subtitle mb-0">
+                            <i class="fas fa-chart-bar"></i>
+                            Classificação
+                        </h2>
+                    </div>
+                </div>
+                
+                <!-- Header Mobile -->
+                <div class="section-header-mobile d-md-none">
+                    <div class="header-mobile-content">
+                        <div class="header-mobile-left">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Classificação</span>
+                        </div>
+                        <div class="header-mobile-right">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conteúdo -->
+                <div class="classification-content" id="classificationContent">
+                    <div class="classification-grid">
+                        <div class="classification-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-check-circle pulse-animation"></i>
+                            </div>
+                            <div class="grade-info">
+                                <h4>Grau I e II</h4>
+                                <p>Função normal a disfunção leve</p>
+                                <ul>
+                                    <li>Movimento facial simétrico</li>
+                                    <li>Pequena fraqueza detectável</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="classification-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-exclamation-circle spin-animation"></i>
+                            </div>
+                            <div class="grade-info">
+                                <h4>Grau III e IV</h4>
+                                <p>Disfunção moderada</p>
+                                <ul>
+                                    <li>Assimetria notável</li>
+                                    <li>Fraqueza evidente</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="classification-card">
+                            <div class="grade-icon">
+                                <i class="fas fa-times-circle glow-animation"></i>
+                            </div>
+                            <div class="grade-info">
+                                <h4>Grau V e VI</h4>
+                                <p>Disfunção grave a total</p>
+                                <ul>
+                                    <li>Movimento mínimo</li>
+                                    <li>Paralisia completa</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Diagnóstico -->
+    <section id="diagnostico" class="section bg-light">
+        <div class="container">
+            <!-- Header Desktop -->
+            <div class="diagnostic-header d-none d-md-block">
+                <h2 class="section-subtitle text-center mb-4">
+                    <i class="fas fa-stethoscope"></i>
+                    Diagnóstico
+                </h2>
+            </div>
+
+            <!-- Header Mobile -->
+            <div class="diagnostic-header-mobile d-md-none">
+                <div class="header-mobile-content static">
+                    <div class="header-mobile-left">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>Diagnóstico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="diagnostic-content">
+                <div class="diagnostic-grid">
+                    <!-- Avaliação Clínica -->
+                    <div class="diagnostic-card">
+                        <div class="diagnostic-icon">
+                            <i class="fas fa-user-md pulse-animation"></i>
+                        </div>
+                        <div class="diagnostic-info">
+                            <h4>Avaliação Clínica</h4>
+                            <ul>
+                                <li>Histórico detalhado do paciente</li>
+                                <li>Exame físico completo</li>
+                                <li>Avaliação dos movimentos faciais</li>
+                                <li>Teste de força muscular</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Exames Complementares -->
+                    <div class="diagnostic-card">
+                        <div class="diagnostic-icon">
+                            <i class="fas fa-microscope spin-animation"></i>
+                        </div>
+                        <div class="diagnostic-info">
+                            <h4>Exames Complementares</h4>
+                            <ul>
+                                <li>Eletroneuromiografia</li>
+                                <li>Ressonância magnética</li>
+                                <li>Tomografia computadorizada</li>
+                                <li>Exames laboratoriais</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Diagnóstico Diferencial -->
+                    <div class="diagnostic-card">
+                        <div class="diagnostic-icon">
+                            <i class="fas fa-clipboard-check glow-animation"></i>
+                        </div>
+                        <div class="diagnostic-info">
+                            <h4>Diagnóstico Diferencial</h4>
+                            <ul>
+                                <li>Identificação da causa base</li>
+                                <li>Diferenciação entre tipos</li>
+                                <li>Avaliação da gravidade</li>
+                                <li>Prognóstico inicial</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Fisiopatologia -->
+    <section id="fisiopatologia" class="section bg-light">
+        <div class="container">
+            <!-- Header Desktop -->
+            <div class="physio-header d-none d-md-block">
+                <h2 class="section-subtitle text-center mb-4">
+                    <i class="fas fa-brain"></i>
+                    Fisiopatologia
+                </h2>
+            </div>
+
+            <!-- Header Mobile -->
+            <div class="physio-header-mobile d-md-none">
+                <div class="header-mobile-content static">
+                    <div class="header-mobile-left">
+                        <i class="fas fa-brain"></i>
+                        <span>Fisiopatologia</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="physio-content">
+                <div class="physio-grid">
+                    <!-- Nervo Facial -->
+                    <div class="physio-card">
+                        <div class="physio-icon">
+                            <i class="fas fa-network-wired pulse-animation"></i>
+                        </div>
+                        <div class="physio-info">
+                            <h4>Nervo Facial</h4>
+                            <ul>
+                                <li>Controle dos músculos da face</li>
+                                <li>Responsável pela expressão facial</li>
+                                <li>Inervação bilateral</li>
+                                <li>VII par craniano</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Mecanismo -->
+                    <div class="physio-card">
+                        <div class="physio-icon">
+                            <i class="fas fa-cogs spin-animation"></i>
+                        </div>
+                        <div class="physio-info">
+                            <h4>Mecanismo</h4>
+                            <ul>
+                                <li>Compressão do nervo</li>
+                                <li>Inflamação do canal facial</li>
+                                <li>Desmielinização</li>
+                                <li>Bloqueio da condução nervosa</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Consequências -->
+                    <div class="physio-card">
+                        <div class="physio-icon">
+                            <i class="fas fa-chart-line glow-animation"></i>
+                        </div>
+                        <div class="physio-info">
+                            <h4>Consequências</h4>
+                            <ul>
+                                <li>Paralisia dos músculos faciais</li>
+                                <li>Alteração da mímica facial</li>
+                                <li>Comprometimento funcional</li>
+                                <li>Impacto na qualidade de vida</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Tratamento -->
+    <section id="tratamento" class="section bg-light">
+        <div class="container">
+            <!-- Header Desktop -->
+            <div class="treatment-header d-none d-md-block">
+                <h2 class="section-subtitle text-center mb-4">
+                    <i class="fas fa-hand-holding-medical"></i>
+                    Tratamento
+                </h2>
+            </div>
+
+            <!-- Header Mobile -->
+            <div class="treatment-header-mobile d-md-none">
+                <div class="header-mobile-content static">
+                    <div class="header-mobile-left">
+                        <i class="fas fa-hand-holding-medical"></i>
+                        <span>Tratamento</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="treatment-content">
+                <div class="treatment-grid">
+                    <!-- Fisioterapia -->
+                    <div class="treatment-card">
+                        <div class="treatment-icon">
+                            <i class="fas fa-heartbeat pulse-animation"></i>
+                        </div>
+                        <div class="treatment-info">
+                            <h4>Fisioterapia</h4>
+                            <ul>
+                                <li>Exercícios faciais específicos</li>
+                                <li>Eletroestimulação</li>
+                                <li>Massagem e drenagem</li>
+                                <li>Terapia com laser</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Medicamentoso -->
+                    <div class="treatment-card">
+                        <div class="treatment-icon">
+                            <i class="fas fa-pills spin-animation"></i>
+                        </div>
+                        <div class="treatment-info">
+                            <h4>Medicamentoso</h4>
+                            <ul>
+                                <li>Corticosteroides</li>
+                                <li>Antivirais</li>
+                                <li>Anti-inflamatórios</li>
+                                <li>Vitaminas do complexo B</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cuidados Específicos -->
+                    <div class="treatment-card">
+                        <div class="treatment-icon">
+                            <i class="fas fa-shield-alt glow-animation"></i>
+                        </div>
+                        <div class="treatment-info">
+                            <h4>Cuidados Específicos</h4>
+                            <ul>
+                                <li>Proteção ocular</li>
+                                <li>Hidratação da córnea</li>
+                                <li>Orientações posturais</li>
+                                <li>Acompanhamento regular</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Prognóstico -->
+    <section id="prognostico" class="section bg-light">
+        <div class="container">
+            <!-- Header Desktop -->
+            <div class="prognosis-header d-none d-md-block">
+                <h2 class="section-subtitle text-center mb-4">
+                    <i class="fas fa-chart-line"></i>
+                    Prognóstico
+                </h2>
+            </div>
+
+            <!-- Header Mobile -->
+            <div class="prognosis-header-mobile d-md-none">
+                <div class="header-mobile-content static">
+                    <div class="header-mobile-left">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Prognóstico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prognosis-content">
+                <div class="prognosis-grid">
+                    <!-- Fatores de Recuperação -->
+                    <div class="prognosis-card">
+                        <div class="prognosis-icon">
+                            <i class="fas fa-clock pulse-animation"></i>
+                        </div>
+                        <div class="prognosis-info">
+                            <h4>Fatores de Recuperação</h4>
+                            <ul>
+                                <li>Idade do paciente</li>
+                                <li>Início do tratamento</li>
+                                <li>Grau da paralisia</li>
+                                <li>Causa da paralisia</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tempo de Recuperação -->
+                    <div class="prognosis-card">
+                        <div class="prognosis-icon">
+                            <i class="fas fa-hourglass-half spin-animation"></i>
+                        </div>
+                        <div class="prognosis-info">
+                            <h4>Tempo de Recuperação</h4>
+                            <ul>
+                                <li>3 semanas: início da melhora</li>
+                                <li>3 meses: recuperação moderada</li>
+                                <li>6 meses: recuperação significativa</li>
+                                <li>1 ano: recuperação máxima</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Indicadores de Evolução -->
+                    <div class="prognosis-card">
+                        <div class="prognosis-icon">
+                            <i class="fas fa-check-circle glow-animation"></i>
+                        </div>
+                        <div class="prognosis-info">
+                            <h4>Indicadores Positivos</h4>
+                            <ul>
+                                <li>Retorno precoce dos movimentos</li>
+                                <li>Ausência de dor</li>
+                                <li>Resposta ao tratamento</li>
+                                <li>Adesão às terapias</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Possíveis Sequelas -->
+                    <div class="prognosis-card">
+                        <div class="prognosis-icon">
+                            <i class="fas fa-exclamation-triangle shield-animation"></i>
+                        </div>
+                        <div class="prognosis-info">
+                            <h4>Possíveis Sequelas</h4>
+                            <ul>
+                                <li>Sincinesias (movimentos involuntários)</li>
+                                <li>Assimetria facial residual</li>
+                                <li>Espasmos musculares</li>
+                                <li>Alterações na expressão</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Prevenção -->
+    <section id="prevencao" class="section bg-light">
+        <div class="container">
+            <!-- Header Desktop -->
+            <div class="prevention-header d-none d-md-block">
+                <h2 class="section-subtitle text-center mb-4">
+                    <i class="fas fa-shield-alt"></i>
+                    Prevenção
+                </h2>
+            </div>
+
+            <!-- Header Mobile -->
+            <div class="prevention-header-mobile d-md-none">
+                <div class="header-mobile-content static">
+                    <div class="header-mobile-left">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Prevenção</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prevention-content">
+                <div class="prevention-grid">
+                    <!-- Fatores de Risco -->
+                    <div class="prevention-card">
+                        <div class="prevention-icon">
+                            <i class="fas fa-exclamation-circle pulse-animation"></i>
+                        </div>
+                        <div class="prevention-info">
+                            <h4>Fatores de Risco</h4>
+                            <ul>
+                                <li>Exposição ao frio intenso</li>
+                                <li>Estresse excessivo</li>
+                                <li>Histórico de herpes</li>
+                                <li>Diabetes não controlada</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Grupos de Risco -->
+                    <div class="prevention-card">
+                        <div class="prevention-icon">
+                            <i class="fas fa-users shield-animation"></i>
+                        </div>
+                        <div class="prevention-info">
+                            <h4>Grupos mais Suscetíveis</h4>
+                            <ul>
+                                <li>Gestantes</li>
+                                <li>Diabéticos</li>
+                                <li>Imunodeprimidos</li>
+                                <li>Idosos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Medidas Preventivas -->
+                    <div class="prevention-card">
+                        <div class="prevention-icon">
+                            <i class="fas fa-check-double glow-animation"></i>
+                        </div>
+                        <div class="prevention-info">
+                            <h4>Medidas Preventivas</h4>
+                            <ul>
+                                <li>Evitar exposição ao frio</li>
+                                <li>Manter boa imunidade</li>
+                                <li>Controlar doenças de base</li>
+                                <li>Gerenciar o estresse</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cuidados Diários -->
+                    <div class="prevention-card">
+                        <div class="prevention-icon">
+                            <i class="fas fa-calendar-check spin-animation"></i>
+                        </div>
+                        <div class="prevention-info">
+                            <h4>Cuidados Diários</h4>
+                            <ul>
+                                <li>Proteção contra vento frio</li>
+                                <li>Alimentação saudável</li>
+                                <li>Sono adequado</li>
+                                <li>Exercícios regulares</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Design desenvolvido por:</h4>
+                    <p>Wesley Santos<br>Estudante de Fisioterapia, 6º Semestre</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,1897 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --text-color: #2c3e50;
+    --light-bg: #f8f9fa;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    padding-top: 76px;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.hero {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 80px 0;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+} 
+
+/* Seções de conteúdo */
+.card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.card h3 i {
+    margin-right: 10px;
+}
+
+.card ul {
+    padding-left: 1.2rem;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+}
+
+footer h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Animações */
+.card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Backgrounds alternados */
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+.institution-info {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.institution-info h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.institution-info p {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.institution-info i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.team-section {
+    margin-top: 50px;
+}
+
+.team-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.team-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.team-avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-avatar i {
+    font-size: 40px;
+    color: white;
+}
+
+.team-info h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.team-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Responsividade para a seção da equipe */
+@media (max-width: 768px) {
+    .team-card {
+        margin-bottom: 20px;
+    }
+    
+    .institution-info {
+        margin-bottom: 30px;
+    }
+} 
+
+/* Estilos para o botão expansível mobile */
+.mobile-team-trigger {
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.btn-expand {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0;
+    border-radius: 12px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.btn-expand-content {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.btn-expand-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-expand-left i {
+    font-size: 1.2rem;
+}
+
+.btn-expand-left span {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.btn-expand-right i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-expand:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-expand:active {
+    transform: translateY(0);
+}
+
+.btn-expand.active .btn-expand-right i {
+    transform: rotate(180deg);
+}
+
+.btn-expand.active {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+/* Comportamento da seção da equipe no mobile */
+@media (max-width: 768px) {
+    .team-section {
+        display: none;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .team-section.show {
+        display: block;
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .team-card {
+        margin-bottom: 15px;
+    }
+} 
+
+.model-container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.model-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.model-attribution {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.model-attribution a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.model-attribution a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .model-container {
+        height: 300px;
+    }
+} 
+
+.hero-content {
+    padding: 2rem;
+}
+
+.hero-content .display-4 {
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.subtitle-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin: 1.5rem 0;
+    border-radius: 2px;
+}
+
+.hero-content .lead {
+    font-size: 1.25rem;
+    color: #666;
+    font-weight: 300;
+}
+
+.institution-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.institution-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.institution-header i {
+    font-size: 1.5rem;
+}
+
+.institution-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.institution-body {
+    padding: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-text strong {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
+    margin-bottom: 0.2rem;
+}
+
+.info-text span {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 1rem 0;
+    }
+    
+    .hero-content .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .institution-card {
+        margin-top: 1.5rem;
+    }
+} 
+
+/* Estilos específicos para seção #doenca - mantendo mobile-team-trigger inalterado */
+#doenca {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#doenca::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+#doenca .container {
+    position: relative;
+}
+
+#doenca .section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+#doenca .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+#doenca .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+}
+
+#doenca .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+#doenca .card-body {
+    padding: 2rem;
+}
+
+#doenca .card h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#doenca .card h3 i {
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+}
+
+#doenca .card p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+#doenca .card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#doenca .card ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+#doenca .card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    line-height: 1;
+    top: -2px;
+}
+
+#doenca .row {
+    margin-top: 2rem;
+}
+
+#doenca .disease-intro {
+    position: relative;
+    z-index: 1;
+}
+
+#doenca .disease-intro::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    #doenca {
+        padding: 40px 0;
+    }
+    
+    #doenca .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    #doenca .card-body {
+        padding: 1.5rem;
+    }
+    
+    #doenca .card h3 {
+        font-size: 1.2rem;
+    }
+    
+    #doenca .card p,
+    #doenca .card ul li {
+        font-size: 1rem;
+    }
+} 
+
+/* Novos estilos para as seções adicionadas em #doenca */
+#doenca .disease-section {
+    margin-top: 4rem;
+}
+
+#doenca .section-subtitle {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+#doenca .section-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* Estilos atualizados para Sinais e Sintomas */
+.symptoms-section {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+    padding: 2.5rem;
+    margin-top: 4rem;
+}
+
+.symptoms-header {
+    margin-bottom: 2.5rem;
+}
+
+.symptoms-header .section-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.symptoms-header .section-subtitle i {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.symptom-card {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.symptom-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.symptom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.symptom-card:hover::before {
+    opacity: 1;
+}
+
+.symptom-icon {
+    margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.symptom-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.symptom-info h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.symptom-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.symptom-info ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.symptom-info .bullet {
+    width: 6px;
+    height: 6px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.symptoms-trigger {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.symptoms-trigger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.symptoms-trigger i {
+    transition: transform 0.3s ease;
+}
+
+.symptoms-trigger.active i {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .symptoms-section {
+        padding: 1.5rem;
+        margin-top: 2rem;
+        border-radius: 15px;
+    }
+
+    .symptoms-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .symptom-card {
+        padding: 1.5rem;
+    }
+
+    .symptoms-content {
+        display: none;
+        padding-top: 1.5rem;
+    }
+
+    .symptoms-content.show {
+        display: block;
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+} 
+
+/* Estilos para a seção de Causas */
+.causes-section {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+    padding: 2.5rem;
+    margin-top: 4rem;
+}
+
+.causes-header {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.causes-header .title-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.causes-header .section-subtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.causes-header .section-subtitle i {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.causes-trigger {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.causes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.cause-card {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.cause-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cause-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.cause-card:hover::before {
+    opacity: 1;
+}
+
+.cause-icon {
+    margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.cause-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.cause-info h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.cause-info p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .causes-section {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .causes-trigger {
+        display: flex;
+    }
+
+    .causes-content {
+        display: none;
+        padding-top: 1.5rem;
+    }
+
+    .causes-content.show {
+        display: block;
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    .causes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cause-card {
+        padding: 1.5rem;
+    }
+} 
+
+/* Novo estilo para headers mobile - mantendo btn-expand-content original intacto */
+.section-header-mobile {
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.header-mobile-content {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.header-mobile-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-mobile-left i {
+    font-size: 1.2rem;
+}
+
+.header-mobile-left span {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+}
+
+.header-mobile-right i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.section-header-mobile.active .header-mobile-right i {
+    transform: rotate(180deg);
+}
+
+.section-header-mobile.active .header-mobile-content {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+/* Animações dos ícones */
+.blink-animation {
+    animation: blink 3s infinite;
+}
+
+.smile-animation {
+    animation: smile 2s infinite;
+}
+
+.eating-animation {
+    animation: eat 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { transform: scaleY(1); }
+    45% { transform: scaleY(1); }
+    50% { transform: scaleY(0.1); }
+    55% { transform: scaleY(1); }
+    100% { transform: scaleY(1); }
+}
+
+@keyframes smile {
+    0% { content: '\f118'; } /* far fa-smile */
+    50% { content: '\f599'; } /* far fa-smile-beam */
+    100% { content: '\f118'; } /* far fa-smile */
+}
+
+@keyframes eat {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-20deg); }
+    75% { transform: rotate(20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Ajuste para suavizar as animações */
+.symptom-icon i {
+    display: inline-block;
+    transform-origin: center;
+}
+
+/* Animações para os ícones de causas */
+.pulse-animation {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.spin-animation {
+    animation: spin 8s linear infinite;
+}
+
+.glow-animation {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.shield-animation {
+    animation: shield 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; filter: brightness(1.3); }
+    100% { opacity: 1; }
+}
+
+@keyframes shield {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+/* Estilos para a seção A Doença */
+.intro-section {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+    padding: 2.5rem;
+    margin-top: 4rem;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.intro-card {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.intro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.intro-card:hover::before {
+    opacity: 1;
+}
+
+.intro-icon {
+    margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.intro-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.intro-info h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.intro-info p, .intro-info ul {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.intro-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.intro-info ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.intro-info ul li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .intro-card {
+        padding: 1.5rem;
+    }
+
+    .intro-content {
+        display: none;
+        padding-top: 1.5rem;
+    }
+
+    .intro-content.show {
+        display: block;
+        animation: slideDown 0.3s ease forwards;
+    }
+} 
+
+/* Estilos para a seção de Classificação */
+.classification-section {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+    padding: 2.5rem;
+    margin-top: 4rem;
+}
+
+.classification-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.classification-card {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.classification-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.classification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.classification-card:hover::before {
+    opacity: 1;
+}
+
+.grade-icon {
+    margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.grade-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.grade-info h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.grade-info p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.grade-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.grade-info ul li {
+    color: #555;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.grade-info ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .classification-section {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .classification-content {
+        display: none;
+        padding-top: 1.5rem;
+    }
+
+    .classification-content.show {
+        display: block;
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    .classification-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+} 
+
+/* Estilos para a seção de Diagnóstico */
+#diagnostico {
+    position: relative;
+    padding: 4rem 0;
+}
+
+.diagnostic-content {
+    margin-top: 2rem;
+}
+
+.diagnostic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.diagnostic-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.diagnostic-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.diagnostic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.diagnostic-card:hover::before {
+    opacity: 1;
+}
+
+.diagnostic-icon {
+    margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.diagnostic-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.diagnostic-info h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.diagnostic-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.diagnostic-info ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.diagnostic-info ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.diagnostic-info ul li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    #diagnostico {
+        padding: 2rem 0;
+    }
+
+    .diagnostic-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .diagnostic-card {
+        padding: 1.5rem;
+    }
+} 
+
+/* Estilos para a seção de Fisiopatologia */
+#fisiopatologia {
+    position: relative;
+    padding: 4rem 0;
+}
+
+.physio-content {
+    margin-top: 2rem;
+}
+
+.physio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.physio-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.physio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.physio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.physio-card:hover::before {
+    opacity: 1;
+}
+
+.physio-icon {
+    margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.physio-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.physio-info h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.physio-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.physio-info ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.physio-info ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.physio-info ul li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    #fisiopatologia {
+        padding: 2rem 0;
+    }
+
+    .physio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .physio-card {
+        padding: 1.5rem;
+    }
+} 
+
+/* Estilos para a seção de Tratamento */
+#tratamento {
+    position: relative;
+    padding: 4rem 0;
+}
+
+.treatment-content {
+    margin-top: 2rem;
+}
+
+.treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.treatment-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.treatment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.treatment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.treatment-card:hover::before {
+    opacity: 1;
+}
+
+.treatment-icon {
+    margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.treatment-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.treatment-info h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.treatment-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.treatment-info ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.treatment-info ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.treatment-info ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Animação específica para ícone de heartbeat */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+}
+
+.treatment-icon .fa-heartbeat {
+    animation: heartbeat 2s infinite;
+}
+
+@media (max-width: 768px) {
+    #tratamento {
+        padding: 2rem 0;
+    }
+
+    .treatment-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .treatment-card {
+        padding: 1.5rem;
+    }
+} 
+
+/* Estilos para a seção de Prognóstico */
+#prognostico {
+    position: relative;
+    padding: 4rem 0;
+}
+
+.prognosis-content {
+    margin-top: 2rem;
+}
+
+.prognosis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.prognosis-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.prognosis-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.prognosis-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.prognosis-card:hover::before {
+    opacity: 1;
+}
+
+.prognosis-icon {
+    margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.prognosis-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.prognosis-info h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.prognosis-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.prognosis-info ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.prognosis-info ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.prognosis-info ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Animação específica para ampulheta */
+@keyframes flip {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.prognosis-icon .fa-hourglass-half {
+    animation: flip 3s infinite linear;
+}
+
+@media (max-width: 768px) {
+    #prognostico {
+        padding: 2rem 0;
+    }
+
+    .prognosis-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .prognosis-card {
+        padding: 1.5rem;
+    }
+}
+/* Estilos para a seção de Prevenção */
+#prevencao {
+    position: relative;
+    padding: 4rem 0;
+}
+
+.prevention-content {
+    margin-top: 2rem;
+}
+
+.prevention-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.prevention-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.prevention-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.prevention-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.prevention-card:hover::before {
+    opacity: 1;
+}
+
+.prevention-icon {
+    margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.prevention-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.prevention-info h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.prevention-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.prevention-info ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.prevention-info ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.prevention-info ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Animação específica para shield */
+@keyframes shield-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); filter: brightness(1.2); }
+    100% { transform: scale(1); }
+}
+
+.prevention-icon .fa-shield-alt {
+    animation: shield-pulse 2s infinite ease-in-out;
+}
+
+@media (max-width: 768px) {
+    #prevencao {
+        padding: 2rem 0;
+    }
+
+    .prevention-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .prevention-card {
+        padding: 1.5rem;
+    }
+}
